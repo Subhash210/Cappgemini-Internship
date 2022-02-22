@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+         
+        <bean id="address1" class="assignmentQuestion1.Address" >
+        	<constructor-arg value="${address.street}"/>
+        	<constructor-arg value="${address.city}"/>
+        	<constructor-arg value="${address.state}"/>
+        	<constructor-arg value="${address.zip}"/>
+        	<constructor-arg value="${address.country}"/>
+        	<!-- <property name="street" value="${address.street}"/>
+        	<property name="city" value="${address.city}"/>
+        	<property name="state" value="${address.state}"/>
+        	<property name="zip" value="${address.zip}"/>
+        	<property name="country" value="${address.country}"/> -->
+        </bean>
+        
+        
+        <bean id="customer" class="assignmentQuestion1.Customer">
+        	<constructor-arg value="1234"/>
+        	<constructor-arg value="Manasa"/>
+        	<constructor-arg value="789563210"/>
+        	<constructor-arg ref="address1"/>
+        	
+        	<!-- <property name="customerAddress" ref="address1"/>
+        	<property name="customerName" value="Manasa"/>
+        	<property name="customerContact" value="789563210"/>
+        	<property name="customerId" value="1234"/> -->
+        
+        </bean>
+        
+           
+           
+           
+        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="locations" value="address.properties"/>
+		</bean>  
+		
+		<context:annotation-config/>
+           
+</beans>

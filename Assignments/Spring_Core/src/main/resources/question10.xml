@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+           
+           <bean id="person1" class="assignmentQuestion10.People"> 
+           			<property name="id" value="1"/>
+           			<property name="name" value="ram"/>
+           			<property name="contactNumber" value="7896541234"/>    
+           </bean>
+               
+           <bean id="person2" class="assignmentQuestion10.People">
+           <property name="id" value="2"/> 
+           			<property name="name" value="Manasa"/>
+           			<property name="contactNumber" value="1234567890"/>    
+           </bean>
+           
+           
+           <bean id="repo" class="assignmentQuestion10.Repo" autowire="byName"/>
+           <bean id="controller" class="assignmentQuestion10.Controller"/>
+           
+</beans>
