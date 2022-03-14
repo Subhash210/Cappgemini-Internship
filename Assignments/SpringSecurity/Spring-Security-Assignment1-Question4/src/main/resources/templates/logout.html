@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+  <head>
+    <title tiles:fragment="title">Messages : Create</title>
+  </head>
+  <body>
+    <div tiles:fragment="content">
+        <form th:action="@{/logout}" method="post">
+        	<h1>Do you want to Logout from this Page</h1>
+   			 <input type="submit" value="Logout" />
+		</form>
+    </div>
+  </body>
+</html>
