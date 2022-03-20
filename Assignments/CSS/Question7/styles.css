@@ -1,0 +1,12 @@
+div{
+    border: 2px solid red;
+}
+section{
+   
+    border-width: 5px;
+	border-style: dotted;
+	border-color: green;
+}
+p{
+    font-size: xx-large;
+}

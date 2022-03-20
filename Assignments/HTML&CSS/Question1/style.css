@@ -1,0 +1,50 @@
+.logo{
+    cursor: pointer;
+    width: 25%;
+    height: 15%;
+    border-radius: 55px;
+    text-align: center;
+    border: 3px solid black;
+}
+.logo1{
+	height: 50%;
+	text-align: center;
+}
+.N1{
+	color: black;
+	font-family: sans-serif;
+	z-index: 2;
+	text-align: center;
+	font-style: italic;
+}
+.H1{
+	color: black;
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: underline;
+	text-transform: capitalize;
+	font-family: serif;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 50px; 
+
+}
+.H2{
+	color: black;
+	text-align: center;
+	font-family: monospace; 
+}
+.H3{
+	margin-left: 5%;
+	font-weight: bold;
+	font-size: large;
+}
+.footer{
+    text-align: center;
+    color:brown;
+}
+.last{
+    text-align: center;
+    color: brown;
+
+}

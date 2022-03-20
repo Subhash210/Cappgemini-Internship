@@ -1,0 +1,12 @@
+body{
+    background-color: #c5f7f7;
+}
+h2{
+    text-decoration: line-through;
+}
+h3{
+    text-decoration: underline;
+}
+span{
+    background-color: grey;
+}

@@ -1,0 +1,162 @@
+body{
+  background-image: url("images/tolography.svg"),
+  linear-gradient(110deg, #f93d66, #6d47d9);
+  background-size: 340px, auto;
+  min-height: calc(100vh - 100px);
+  margin: 50px;
+/* background: white; */
+  background-attachment: fixed;
+  letter-spacing: -1px;
+}
+body, ul, li, h1, h2, a{
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+  }
+p{
+  font-size: 18px;
+}
+/* header{
+    background-color: #df3434;
+    padding: 10px 0;
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+header h1{
+  color: aqua;
+  border: 8px solid white;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 30px;
+
+} */
+.banner{
+  position: relative;
+}
+.banner img{
+  max-width: 100%;
+}
+
+.banner .welcome{
+  font-size: 40px;
+  background-color: #94f7eee8;
+  border-radius: 40px;
+  top: 74%;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+}
+.banner .welcome span{
+  font-size: 1.2em;
+}
+nav{
+  background: #F4F4F4;
+  padding: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+nav ul{
+  white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+nav li{
+  width: 25%;
+  display: inline-block;
+  font-size: 24px;
+}
+nav li a{
+  text-decoration: none;
+  color: #4B4B4B;
+}
+nav li a:hover{
+  text-decoration: underline;
+}
+main{
+  max-width: 100%;
+  width: -30px;
+  margin: 80px auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+main p{
+ 
+  border-left: 3px solid royalblue;
+  border-right: 3px solid royalblue;
+}
+article h2{
+  text-align: left;
+  color: #7775ec;
+  font-size: 60px;
+}
+article p{
+  line-height: 2em;
+  color: #4B4B4B;
+}
+.images img{
+  height: 350px;
+  width: 400px;
+}
+.images{
+  text-align: center;
+  margin: 80px 0;
+  white-space: nowrap;
+}
+
+.images li{
+  display: inline-block;
+  list-style-type: none;
+  width: 40%;
+  margin: 20px 5%;
+  position: relative;
+}
+.images li:hover{
+  top: -4px;
+}
+.images li img{
+  max-width: 100%;
+}
+section.address{
+  background-color: white;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4B4B4B;
+}
+section.address h2{
+  font-size: 36px;
+}
+section.address p{
+  font-size: 26px;
+}
+.address div.car img{
+  height: 50px;
+  width: 100px;
+  background-color: #F4F4F4;
+  animation-name: car;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes car{
+  from{transform: translateX(-800px);}
+  to{transform: translateX(-50px);}
+}
+.address div.res img{
+  margin-left: 200px;
+  height: 100px;
+  width: 200px;
+}
+section.feedback{
+  text-align: center;
+}
+.label{
+  font-size: xx-large;
+}

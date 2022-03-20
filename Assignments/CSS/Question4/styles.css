@@ -1,0 +1,18 @@
+ section{
+    background-color: #c5f7f7;
+}
+a:link{
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited{
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover{
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}
