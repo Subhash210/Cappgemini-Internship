@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.styled-table {
+    border-collapse: collapse;
+    margin: 50px 20px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+   
+
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    opacity: 0.8;
+}
+.styled-table tbody tr:nth-of-type(odd) {
+    background-color: floralwhite;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.showtable{
+    margin-left: 20px;
+}
+
+.reservatioinsearch{
+    height: 35px;
+    width: 200px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+}
+.backimageall{
+    height: 100vh;
+    background-image: url('../images/recepreservation.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.searchdivall{
+    padding: 20px;
+   text-align: center;
+   padding-top: 40px;
+   padding-bottom: 0%;
+}

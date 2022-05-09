@@ -1,0 +1,23 @@
+.logoutown{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    left: 85%;
+    padding: 5px;
+   
+}
+.recepheaderown{
+    padding: 10px;
+    top: 10px;
+}
+.logoutown :hover{
+    color: black;
+    
+}
+.changepasswordown{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    left: 82%;
+    padding: 5px;
+}

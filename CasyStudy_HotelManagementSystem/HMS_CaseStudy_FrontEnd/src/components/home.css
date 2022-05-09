@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.hotelName{
+    position:sticky;
+    /* top: 0%; */
+    margin-top: 0%;
+    margin-bottom: 0%;
+    text-align: center;
+    font-size: 30px;
+    background-color: #e2d0bd;
+    padding: 15px;
+    width: auto;
+    z-index: 1;
+    display: flex;
+}
+.babaihotelName{
+    padding: 0%;
+    font-weight: 600;
+    color: rgb(111, 55, 55);
+}
+.abouthotel{
+    text-align: left;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+.gridabout{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 15px;
+}
+.aboutimage{
+    grid-column: 3/4;
+    grid-row: 1/3;
+    max-height: 400px;
+    width: 650px;
+}
+nav {
+    background-color: rgb(111, 55, 55);
+    padding: 20px;
+    position:sticky;
+    top: 0%;
+    z-index: 1;
+    text-align: center;
+}
+nav ul{
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav li{
+    width: 25%;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+.slider{
+    padding-top: 10px;
+    background-color: rgb(111, 55, 55);
+}
+#footer{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1);
+    text-align: center;
+    background-color: rgb(217, 201, 119);
+}
+p{
+    font-size: medium; 
+    padding: 10px;
+    padding-left: 0%;
+}
+.abouticons{
+    width: 25px;
+}
+h4{
+    padding-left: 10px;
+}
+.imagecenter{
+   display: flex;
+   align-items: center;
+  
+}
+.testimonialhome{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 20px;
+    text-align: center;
+    background-color: #e2d0bd;
+}
+.testmonialtags{
+    border: 1px solid floralwhite;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+    width: 400px;
+    margin-left: 40px;
+
+}
+.testimoniallogos{
+    width: 100px;
+}
+.logobrown{
+    width: 60px;
+    height: 50px;
+}
+

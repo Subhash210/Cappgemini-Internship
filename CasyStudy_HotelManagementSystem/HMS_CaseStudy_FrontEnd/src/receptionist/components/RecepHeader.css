@@ -1,0 +1,24 @@
+.logout{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    left: 84%;
+    padding: 5px;
+   
+}
+.changepassword{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    left: 83%;
+    padding: 5px;
+
+}
+.recepheader{
+    padding: 10px;
+    top: 10px;
+}
+.logout :hover{
+    color: black;
+    
+}

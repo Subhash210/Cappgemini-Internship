@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.minventorynavbar{
+    display: flex;
+    background-color: #e2d0bd;
+    padding:10px 20px;
+    position:sticky;
+    text-align: right;
+    position: sticky;
+    top: 0%;
+    
+}
+.minventorynavbar ul{
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-right: 0%;
+    margin-top: 8px;
+}
+.minventorynavbar li{
+    width: 150px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: right;
+}
+.minventorynavbar li :hover{
+    color: beige;
+    width: 150px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: right;
+}

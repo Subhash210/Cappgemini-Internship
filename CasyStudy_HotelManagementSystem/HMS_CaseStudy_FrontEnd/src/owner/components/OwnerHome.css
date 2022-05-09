@@ -1,0 +1,94 @@
+.redirectlinkown {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    background-color: white;
+    text-align: left;
+    display: block;
+    width: 400px;
+    min-height: 200px;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+    left: 3%;
+    align-self: center;
+    justify-self: center;
+    margin-top: 10px;
+}
+h4{
+    margin: 0%;
+}
+p{
+    font-size: smaller;
+}
+.mappingown{
+    margin-top: 40px;
+    display: grid;
+    /* grid-template-columns: [first] auto [line2] auto [line3] auto [col4-start] auto [five] auto [end]; */
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2,1fr);
+    gap: 35px;
+    
+}
+.backgroundown{
+    background-color: floralwhite;
+
+}
+.reservationown{
+    grid-column: 2/3;
+    align-items: flex-end;
+}
+.billown{
+    grid-column: 2/3;
+}
+.staffown{
+    grid-column: 2/3;
+}
+.addmanager{
+    grid-column: 2/3;
+}
+.parallaxown {
+    background-image: url("../images/ownerhome.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+#logosown{
+    width: 50px;
+}
+.betweenbarown{
+    left: 300px;
+    background-color: #e2d0bd;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+    padding: 25px 20px;
+    position:sticky;
+    top: 0%;
+    z-index: 1;
+    max-width: 900px;
+    bottom: 210px;
+   
+}
+.betweenbarown ul{
+    white-space: nowrap;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0%;
+}
+.betweenbarown li{
+    width: 25%;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+}
+#imgown{
+    max-width: 100%;
+}
+
+.betweenbarown li :hover{
+    color: black;
+}
+
