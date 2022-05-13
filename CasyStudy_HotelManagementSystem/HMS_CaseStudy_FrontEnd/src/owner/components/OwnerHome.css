@@ -32,6 +32,17 @@ p{
     gap: 35px;
     
 }
+.quotationown{
+    text-align: center;
+    position: absolute;
+    color:black;
+    left: 100px;
+    right: 100px;
+    top: 200px;
+    font-weight: 550;
+    font-size: xx-large;
+    text-shadow: 1px 1px rgb(108, 17, 17);
+}
 .backgroundown{
     background-color: floralwhite;
 
@@ -56,6 +67,7 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 0.75;
   }
 #logosown{
     width: 50px;
@@ -91,4 +103,5 @@ p{
 .betweenbarown li :hover{
     color: black;
 }
+
 

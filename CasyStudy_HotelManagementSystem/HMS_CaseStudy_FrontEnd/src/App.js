@@ -2,8 +2,6 @@ import "./App.css";
 // importing components from react-router-dom package
 import {
   BrowserRouter as Router,
-  Link,
-  Switch,
   Route,
   Routes
 } from "react-router-dom";
@@ -16,6 +14,7 @@ import RecepHome from "./receptionist/components/RecepHome";
 import ManagerHome from "./manager/components/ManagerHome";
 import OwnerHome from "./owner/components/OwnerHome";
 
+import Paymenthome from "./owner/payment/Paymenthome";
 import Payment from "./receptionist/payment/Payment";
 import RresAdd from "./receptionist/reservation/RresAdd";
 import RGuestAdd from "./receptionist/guest/RGuestAdd";
@@ -80,7 +79,10 @@ import OUpdateStaff from "./owner/staff/OUpdateStaff";
 import OGetAllStaff from "./owner/staff/OGetAllStaff";
 import ODeleteStaff from "./owner/staff/ODeleteStaff";
 import UpdateRecepPassword from "./receptionist/components/UpdateRecepPassword";
-
+import Unauthorize from "./components/Unauthorize";
+import OwnerPrivateRoute from "./owner/components/OwnerPrivateRoute";
+import RecepPrivateRoute from "./receptionist/components/RecepPrivateRoute";
+import ManagerPrivateRoute from "./manager/components/ManagerPrivateRoute";
   
 function App() {
 
@@ -94,111 +96,116 @@ function App() {
           <Route path="/receptionistlogin/*" element={<RecepLogin/>} />               
           <Route path="/managerlogin/*" element={<ManagerLogin/>} />
           <Route path="/ownerlogin/*" element={<OwnerLogin/>} />  
-          <Route path="/recephome" element={<RecepHome/>} />    
-          <Route path="/managerhome" element={<ManagerHome/>} />  
-          <Route path="/ownerhome" element={<OwnerHome/>} /> 
-          <Route path="/receppasswordupdate" element={<UpdateRecepPassword/>} /> 
+          <Route path="/recephome" element={<RecepPrivateRoute><RecepHome/></RecepPrivateRoute>} />    
+          <Route path="/managerhome" element={<ManagerPrivateRoute><ManagerHome/></ManagerPrivateRoute>} />  
+          <Route path="/ownerhome" element={<OwnerPrivateRoute><OwnerHome/></OwnerPrivateRoute>} /> 
+          <Route path="/receppasswordupdate" element={<RecepPrivateRoute><UpdateRecepPassword/></RecepPrivateRoute>} /> 
+
+
+          {/* <Route path='/order/:id' element={<PrivateRoute><CreateOrder /></PrivateRoute>} /> */}
 
 
           {/* Receptionist Routes  */}
-          <Route path="/rreservationadd" element={<RresAdd/>}/>
-          <Route path="/rresupdate" element={<RresUpdate/>}/>
-          <Route path="/rresgetall" element={<RresGetAll/>}/>
+          <Route path="/rreservationadd" element={<RecepPrivateRoute><RresAdd/></RecepPrivateRoute>}/>
+          <Route path="/rresupdate" element={<RecepPrivateRoute><RresUpdate/></RecepPrivateRoute>}/>
+          <Route path="/rresgetall" element={<RecepPrivateRoute><RresGetAll/></RecepPrivateRoute>}/>
 
-          <Route path="/rguestadd" element={<RGuestAdd/>}/>
-          <Route path='/rguestupdate' element={<RGuestUpdate/>}/>
-          <Route path='/rguestgetall' element={<RGuestGetAll/>}/>
-          <Route path='/rguestcheckout' element={<RGuestCheckout/>}/>
-          <Route path='/rguestaddreserved' element={<RGuestAddReserved/>}/>
-          <Route path='/rguestdelete' element={<RGuestDelete/>}/>
+          <Route path="/rguestadd" element={<RecepPrivateRoute><RGuestAdd/></RecepPrivateRoute>}/>
+          <Route path='/rguestupdate' element={<RecepPrivateRoute><RGuestUpdate/></RecepPrivateRoute>}/>
+          <Route path='/rguestgetall' element={<RecepPrivateRoute><RGuestGetAll/></RecepPrivateRoute>}/>
+          <Route path='/rguestcheckout' element={<RecepPrivateRoute><RGuestCheckout/></RecepPrivateRoute>}/>
+          <Route path='/rguestaddreserved' element={<RecepPrivateRoute><RGuestAddReserved/></RecepPrivateRoute>}/>
+          <Route path='/rguestdelete' element={<RecepPrivateRoute><RGuestDelete/></RecepPrivateRoute>}/>
 
 
-          <Route path="/rbillgenerate" element={<RGenerateBill/>}/>
-          <Route path='/rgetallbills' element={<RGetAllBills/>}/>
-          <Route path='/rprintbill' element={<RPrintBill/>}/>
+          <Route path="/rbillgenerate" element={<RecepPrivateRoute><RGenerateBill/></RecepPrivateRoute>}/>
+          <Route path='/rgetallbills' element={<RecepPrivateRoute><RGetAllBills/></RecepPrivateRoute>}/>
+          <Route path='/rprintbill' element={<RecepPrivateRoute><RPrintBill/></RecepPrivateRoute>}/>
 
-          <Route path='/rgetrates' element={<RGetRates/>}/>
+          <Route path='/rgetrates' element={<RecepPrivateRoute><RGetRates/></RecepPrivateRoute>}/>
 
-          <Route path="/ravailablerooms" element={<RGetAvailableRooms/>}/>
-          <Route path="/rpayment" element={<Payment/>}/>
+          <Route path="/ravailablerooms" element={<RecepPrivateRoute><RGetAvailableRooms/></RecepPrivateRoute>}/>
+          <Route path="/rpayment" element={<RecepPrivateRoute><Payment/></RecepPrivateRoute>}/>
 
           <Route path="*" element={<Error/>}/>
 
 
         {/* MANAGER ROOM ROUTES */}
-          <Route path='/maddroom' element={<MAddRoom/>}/>
-          <Route path='/mgetallrooms' element={<MGetAllRooms/>}/>
-          <Route path='/mdeleteroom' element={<MDeleteRoom/>}/>
+          <Route path='/maddroom' element={<ManagerPrivateRoute><MAddRoom/></ManagerPrivateRoute>}/>
+          <Route path='/mgetallrooms' element={<ManagerPrivateRoute><MGetAllRooms/></ManagerPrivateRoute>}/>
+          <Route path='/mdeleteroom' element={<ManagerPrivateRoute><MDeleteRoom/></ManagerPrivateRoute>}/>
 
           {/* MANAGER INVENTORY ROUTES */}
-          <Route path='/maddinventory' element={<MAddInventory/>}/>
-          <Route path='/mgetinventory' element={<MGetAllInventory/>}/>
-          <Route path='/mupdateinventory' element={<MUpdateInventory/>}/>
+          <Route path='/maddinventory' element={<ManagerPrivateRoute><MAddInventory/></ManagerPrivateRoute>}/>
+          <Route path='/mgetinventory' element={<ManagerPrivateRoute><MGetAllInventory/></ManagerPrivateRoute>}/>
+          <Route path='/mupdateinventory' element={<ManagerPrivateRoute><MUpdateInventory/></ManagerPrivateRoute>}/>
 
           {/* MANAGER RATES ROUTES */}
-          <Route path='/maddnewrate' element={<MAddNewRate/>}/>
-          <Route path='/mgetrates' element={<MGetRates/>}/>
-          <Route path='/mupdaterate' element={<MUpdateRate/>}/>
+          <Route path='/maddnewrate' element={<ManagerPrivateRoute><MAddNewRate/></ManagerPrivateRoute>}/>
+          <Route path='/mgetrates' element={<ManagerPrivateRoute><MGetRates/></ManagerPrivateRoute>}/>
+          <Route path='/mupdaterate' element={<ManagerPrivateRoute><MUpdateRate/></ManagerPrivateRoute>}/>
 
           {/* MANAGER STAFF ROUTES */}
-          <Route path='/maddstaff' element={<MAddStaff/>}/>
-          <Route path='/mupdatestaff' element={<MUpdateStaff/>}/>
-          <Route path='/mgetallstaff' element={<MGetAllStaff/>}/>
-          <Route path='/mdeletestaff' element={<MDeleteStaff/>}/>
+          <Route path='/maddstaff' element={<ManagerPrivateRoute><MAddStaff/></ManagerPrivateRoute>}/>
+          <Route path='/mupdatestaff' element={<ManagerPrivateRoute><MUpdateStaff/></ManagerPrivateRoute>}/>
+          <Route path='/mgetallstaff' element={<ManagerPrivateRoute><MGetAllStaff/></ManagerPrivateRoute>}/>
+          <Route path='/mdeletestaff' element={<ManagerPrivateRoute><MDeleteStaff/></ManagerPrivateRoute>}/>
 
           {/* MANAGER DETAILS ROUTES */}
-          <Route path='/addreceptionist' element={<AddReceptionist/>}/>
-          <Route path='/managerchangepassword' element={<UpdateManagerDetails/>}/>
+          <Route path='/addreceptionist' element={<ManagerPrivateRoute><AddReceptionist/></ManagerPrivateRoute>}/>
+          <Route path='/managerchangepassword' element={<ManagerPrivateRoute><UpdateManagerDetails/></ManagerPrivateRoute>}/>
 
        {/* OWNER DETAILS ROUTES */}
-       <Route path='/oowneraddreceptionist' element={<OwnerAddReceptionist/>}/>
-          <Route path='/oaddmanager' element={<AddManager/>}/>
-          <Route path='/ochangepassword' element={<UpdateOwnerDetails/>}/>
+       <Route path='/oowneraddreceptionist' element={<RecepPrivateRoute><OwnerAddReceptionist/></RecepPrivateRoute>}/>
+          <Route path='/oaddmanager' element={<OwnerPrivateRoute><AddManager/></OwnerPrivateRoute>}/>
+          <Route path='/ochangepassword' element={<OwnerPrivateRoute><UpdateOwnerDetails/></OwnerPrivateRoute>}/>
 
           {/* OWNER BILL ROUTES */}
-          <Route path='/ogeneratebill' element={<OGenerateBill/>}/>
-          <Route path='/ogetallbills' element={<OGetAllBills/>}/>
-          <Route path='/oprintbill' element={<OPrintBill/>}/>
+          <Route path='/ogeneratebill' element={<OwnerPrivateRoute><OGenerateBill/></OwnerPrivateRoute>}/>
+          <Route path='/ogetallbills' element={<OwnerPrivateRoute><OGetAllBills/></OwnerPrivateRoute>}/>
+          <Route path='/oprintbill' element={<OwnerPrivateRoute><OPrintBill/></OwnerPrivateRoute>}/>
+          <Route path='/paymenthome' element={<OwnerPrivateRoute><Paymenthome/></OwnerPrivateRoute>}/>
 
           {/* OWNER DEPARTMENT ROUTES */}
-          <Route path='/oadddepartment' element={<OAddDepartment/>}/>
-          <Route path='/ogetdepartments' element={<OGetAllDepartments/>}/>
+          <Route path='/oadddepartment' element={<OwnerPrivateRoute><OAddDepartment/></OwnerPrivateRoute>}/>
+          <Route path='/ogetdepartments' element={<OwnerPrivateRoute><OGetAllDepartments/></OwnerPrivateRoute>}/>
 
           {/* OWNER GUEST ROUTES */}
-          <Route path='/oguestadd' element={<OGuestAdd/>}/>
-          <Route path='/oguestupdate' element={<OGuestUpdate/>}/>
-          <Route path='/oguestgetall' element={<OGuestGetAll/>}/>
-          <Route path='/oguestcheckout' element={<OGuestCheckout/>}/>
-          <Route path='/oguestaddreserved' element={<OGuestAddReserved/>}/>
-          <Route path='/oguestdelete' element={<OGuestDelete/>}/>
+          <Route path='/oguestadd' element={<OwnerPrivateRoute><OGuestAdd/></OwnerPrivateRoute>}/>
+          <Route path='/oguestupdate' element={<OwnerPrivateRoute><OGuestUpdate/></OwnerPrivateRoute>}/>
+          <Route path='/oguestgetall' element={<OwnerPrivateRoute><OGuestGetAll/></OwnerPrivateRoute>}/>
+          <Route path='/oguestcheckout' element={<OwnerPrivateRoute><OGuestCheckout/></OwnerPrivateRoute>}/>
+          <Route path='/oguestaddreserved' element={<OwnerPrivateRoute><OGuestAddReserved/></OwnerPrivateRoute>}/>
+          <Route path='/oguestdelete' element={<OwnerPrivateRoute><OGuestDelete/></OwnerPrivateRoute>}/>
 
           {/* OWNER INVENTORY ROUTES */}
-          <Route path='/oaddinventory' element={<OAddInventory/>}/>
-          <Route path='/ogetinventory' element={<OGetAllInventory/>}/>
-          <Route path='/oupdateinventory' element={<OUpdateInventory/>}/>
+          <Route path='/oaddinventory' element={<OwnerPrivateRoute><OAddInventory/></OwnerPrivateRoute>}/>
+          <Route path='/ogetinventory' element={<OwnerPrivateRoute><OGetAllInventory/></OwnerPrivateRoute>}/>
+          <Route path='/oupdateinventory' element={<OwnerPrivateRoute><OUpdateInventory/></OwnerPrivateRoute>}/>
 
           {/* OWNER RATES ROUTES */}
-          <Route path='/oaddnewrate' element={<OAddNewRate/>}/>
-          <Route path='/ogetrates' element={<OGetRates/>}/>
-          <Route path='/oupdaterate' element={<OUpdateRate/>}/>
+          <Route path='/oaddnewrate' element={<OwnerPrivateRoute><OAddNewRate/></OwnerPrivateRoute>}/>
+          <Route path='/ogetrates' element={<OwnerPrivateRoute><OGetRates/></OwnerPrivateRoute>}/>
+          <Route path='/oupdaterate' element={<OwnerPrivateRoute><OUpdateRate/></OwnerPrivateRoute>}/>
 
           {/* OWNER RESERVATION ROUTES */}
-          <Route path='/oresupdate' element={<OResUpdate/>}/>
-          <Route path='/oresgetall' element={<OResGetAll/>}/>
-          <Route path='/oresadd' element={<OResAdd/>}/>
+          <Route path='/oresupdate' element={<OwnerPrivateRoute><OResUpdate/></OwnerPrivateRoute>}/>
+          <Route path='/oresgetall' element={<OwnerPrivateRoute><OResGetAll/></OwnerPrivateRoute>}/>
+          <Route path='/oresadd' element={<OwnerPrivateRoute><OResAdd/></OwnerPrivateRoute>}/>
 
           {/* OWNER ROOM ROUTES */}
-          <Route path='/oaddroom' element={<OAddRoom/>}/>
-          <Route path='/ogetallrooms' element={<OGetAllRooms/>}/>
-          <Route path='/odeleteroom' element={<ODeleteRoom/>}/>
+          <Route path='/oaddroom' element={<OwnerPrivateRoute><OAddRoom/></OwnerPrivateRoute>}/>
+          <Route path='/ogetallrooms' element={<OwnerPrivateRoute><OGetAllRooms/></OwnerPrivateRoute>}/>
+          <Route path='/odeleteroom' element={<OwnerPrivateRoute><ODeleteRoom/></OwnerPrivateRoute>}/>
 
           {/* OWNER STAFF ROUTES */}
-          <Route path='/oaddstaff' element={<OAddStaff/>}/>
-          <Route path='/oupdatestaff' element={<OUpdateStaff/>}/>
-          <Route path='/ogetallstaff' element={<OGetAllStaff/>}/>
-          <Route path='/odeletestaff' element={<ODeleteStaff/>}/>
+          <Route path='/oaddstaff' element={<OwnerPrivateRoute><OAddStaff/></OwnerPrivateRoute>}/>
+          <Route path='/oupdatestaff' element={<OwnerPrivateRoute><OUpdateStaff/></OwnerPrivateRoute>}/>
+          <Route path='/ogetallstaff' element={<OwnerPrivateRoute><OGetAllStaff/></OwnerPrivateRoute>}/>
+          <Route path='/odeletestaff' element={<OwnerPrivateRoute><ODeleteStaff/></OwnerPrivateRoute>}/>
 
-         
+          {/* AUTHORIZATION */}
+          <Route path="/unauthorize" element={<Unauthorize/>}/>
        
         </Routes>
       </Router>

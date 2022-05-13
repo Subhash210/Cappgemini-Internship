@@ -1,0 +1,20 @@
+.image401{
+  position: relative;
+}
+.unauth{
+  position: absolute;
+  font-size: large; 
+  padding: 10px 25px;
+  color: #0f0f0e;
+  top: 40%;
+  left: 44%;
+  z-index: 1;
+
+}
+.error401{
+  position: relative;
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  margin-top: 10px;
+}

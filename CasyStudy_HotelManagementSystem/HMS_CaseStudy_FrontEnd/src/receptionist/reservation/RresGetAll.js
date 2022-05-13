@@ -45,7 +45,7 @@ function RresGetAll() {
         <table>
           <thead >
             <tr>
-            <th>ReservationCode_</th>
+            <th>ReservationCode</th>
               <th>name</th>
               <th>phoneNumber</th>
               <th>checkIn</th>

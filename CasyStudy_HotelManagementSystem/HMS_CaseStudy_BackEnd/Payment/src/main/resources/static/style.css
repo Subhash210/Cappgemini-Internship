@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, #6f3737,#e2d0bd);
     margin-top: 3%;
     padding: 3%;
 }
@@ -52,7 +52,7 @@
 .btnRegister {
     border: none;
     border-radius: 1.5rem;
-    background: #8000ff;
+    background: rgb(111, 55, 55) ;
     color: #fff;
     font-weight: 600;
     width: 55%;
@@ -86,8 +86,8 @@
     width: 100px;
     color: #0062cc;
     border: 2px solid #0062cc;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
 .register-heading {
@@ -98,4 +98,17 @@
     float: left;
     /* margin-left: 0px; */
     padding-left: 75px;
+}
+.payinterface{
+	background-color: antiquewhite;
+}
+.navbarhome{
+	
+	text-align: right;
+	
+}
+.homepage{
+	color: rgb(111, 55, 55);
+	text-decoration: none;
+	
 }

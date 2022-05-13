@@ -19,7 +19,7 @@ import com.twilio.type.PhoneNumber;
 public class NotificationController {
 
 	private final static String ACCOUNT_SID = "AC422ae1c14a4cfa4dcf903decf5b37059";
-	private final static String AUTH_ID = "18f2d014086df311bea886cd7ab80e3b";
+	private final static String AUTH_ID = "a0d7737a613f8a667add90068d4ce3dd";
 
 	static {
 		Twilio.init(ACCOUNT_SID, AUTH_ID);
@@ -36,8 +36,7 @@ public class NotificationController {
 	@PostMapping("/reservationnotification")
 	public void run(@RequestBody ReservationNotification details) throws Exception {
 		Message.creator(new PhoneNumber(details.getPhoneNumber()), new PhoneNumber("+17577928806"),
-				"Dear " + details.getName()
-						+ " Thank you for your reservation to BABAI Hotel . Your reservation code is "
+				"Dear " + details.getName() + " Thank you for your reservation to BABAI Hotel . Your reservation code is "
 						+ details.getReservationCode())
 				.create();
 		reservationMail.sendmail(details);

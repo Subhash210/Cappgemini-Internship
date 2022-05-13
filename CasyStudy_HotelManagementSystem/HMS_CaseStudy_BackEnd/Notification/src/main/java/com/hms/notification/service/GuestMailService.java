@@ -45,9 +45,9 @@ public class GuestMailService {
 		msg.setFrom(new InternetAddress(emailId, false));
 
 		msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(details.getEmailId()));
-		msg.setSubject("ABC Hotel");
+		msg.setSubject("BABAI Hotel");
 		msg.setContent("Dear " + details.getName()
-				+ " Thank you for registering to ABC Hotel. Your Reservation Code is " + details.getGuestCode(),
+				+ " Thank you for registering to BABAI Hotel. Your Reservation Code is " + details.getGuestCode(),
 				"text/html");
 		msg.setSentDate(new Date());
 

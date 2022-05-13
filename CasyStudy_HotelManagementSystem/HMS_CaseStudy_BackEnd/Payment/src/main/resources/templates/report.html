@@ -37,9 +37,10 @@
                     <tbody>
 
                     <tr th:each="entry : ${parameters}">
-
-                        <td th:text="${entry.key} + '  : -  ' + ${entry.value}"></td>
-                      
+                        <td th:text="${entry.key} + '  : -  ' + ${entry.value}"></td>       
+                    </tr>
+                    <tr>
+                      <td><div class="navbarhomeown"><a href='http://localhost:3000/recephome' class='homepage'>Hom</a><a href='http://localhost:3000/ownerhome' class='homepageown'>e</a></div></td>
                     </tr>
                     </tbody>
                 </table>

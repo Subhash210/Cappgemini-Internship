@@ -1,0 +1,42 @@
+server:
+        port: 8094
+spring:
+        application:
+               name: APIgateway              
+        cloud: 
+          gateway:
+            globalcors:
+              corsConfigurations:'[/**]':
+                allowedOrigins: "http://localhost:3000"
+                allowedHeaders: "*"
+                allowedMethods: "*"
+            routes:
+            - id: Receptionist
+              uri: http://localhost:8097/
+              predicates:
+              - Path=/Receptionist/**
+              filters:
+              - StripPrefix=1
+            - id: Manager
+              uri: http://localhost:8096/
+              predicates:
+              - Path=/Manager/**
+              filters:
+              - StripPrefix=1
+            - id: Owner
+              uri: http://localhost:8095/
+              predicates:
+              - Path=/Owner/**  
+              filters:
+              - StripPrefix=1
+
+  
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+            
+                

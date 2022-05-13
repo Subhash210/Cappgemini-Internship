@@ -45,22 +45,11 @@ public class ReservationMailService {
 		msg.setFrom(new InternetAddress(emailId, false));
 
 		msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(details.getEmailId()));
-		msg.setSubject("ABC Hotel");
+		msg.setSubject("BABAI Hotel");
 		msg.setContent("Dear " + details.getName()
-				+ " Thank you for registering to ABC Hotel. Your Reservation Code is " + details.getReservationCode(),
+				+ " Thank you for registering to BABAI Hotel. Your Reservation Code is " + details.getReservationCode(),
 				"text/html");
 		msg.setSentDate(new Date());
-
-//		MimeBodyPart messageBodyPart = new MimeBodyPart();
-//		messageBodyPart.setContent("Sample body and content", "text/html");
-//
-//		Multipart multipart = new MimeMultipart();
-//		multipart.addBodyPart(messageBodyPart);
-
-//		   MimeBodyPart attachPart = new MimeBodyPart();
-//		   attachPart.attachFile("C:\\Users\\navne\\Documents\\workspace-spring-tool-suite-4-4.13.1.RELEASE\\Mailer\\src\\main\\resources\\clock.png");
-//		   multipart.addBodyPart(attachPart);
-//		   msg.setContent(multipart);
 		Transport.send(msg);
 	}
 }

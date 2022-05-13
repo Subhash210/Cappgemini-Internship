@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import OwnerHeader from "./OwnerHeader";
 import './OwnerHome.css'
+import emailjs from '@emailjs/browser';
 import reserve from '../images/reserve.png'
 import guest from '../images/guest.png'
 import bill from '../images/bill.png'
@@ -23,16 +24,31 @@ import image3 from '../images/image3.jpg'
 import image4 from'../images/image4.jpg'
 
 function OwnerHome() {
+
+  const[message,setMessage]=useState(null);
+  const sendmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_tqjy03g', 'template_ibrww7i', e.target, 'stWWakmH7XChiKhze')
+      .then((result) => {
+        setMessage("Your Message is recieved the support will contact you in 18 hours");
+        setTimeout(function(){window.location.reload()},1000);
+      }, (error) => {
+          console.log(error.text);
+      });e.target.reset();
+  };
+
   
   return (
     <div className="backgroundown">
      
      <div className="parallaxown"> <OwnerHeader/></div>
+     <div className="quotationown">Hospitality is almost impossible to teach. It's all about hiring the right people.</div>
       <div className="betweenbar">
         <ul>
           <li><a href="#eventheading">Events</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#sectionheading">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#support">Support</a></li>
         </ul>
       </div>
@@ -47,7 +63,7 @@ function OwnerHome() {
    <NavLink to="/oaddnewrate" className="redirectlink ratesown" ><img src={rates1} id='logos'/><br/><h4>Rates</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>	
    <NavLink to="/oaddinventory" className="redirectlink inventoryown" ><img src={inventory} id='logos'/><br/><h4>Inventory</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>
    <NavLink to="/oaddstaff" className="redirectlink staffown" ><img src={staff} id='logos'/><br/><h4>Staff</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>
-   <NavLink to="/rpayment" className="redirectlink paymentown" id="payment" ><img src={payment} id='logos'/><br/><h4>Payment</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>	
+   <NavLink to="/paymenthome" className="redirectlink paymentown" id="payment" ><img src={payment} id='logos'/><br/><h4>Payment</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>	
    <NavLink to="/oadddepartment" className="redirectlink departmentown" ><img src={department} id='logos'/><br/><h4>Department</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>
    <NavLink to="/oaddmanager" className="redirectlink addmanager" ><img src={department} id='logos'/><br/><h4>Recruit</h4><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></NavLink>
   </div>
@@ -92,10 +108,12 @@ function OwnerHome() {
     <img src={image4} className="imagesgal" alt="images"/>
   </div>
 
-  <section>
-      <div className="row">
-        <h2 id="sectionheading">Services</h2>
+  {/* Services */}
+ 
+  <div id="services" className="services">
+        Services
       </div>
+      <section>
       <div className="row">
         <div className="column">
           <div className="card">
@@ -197,18 +215,19 @@ function OwnerHome() {
       <div className="right-side">
         <div className="topic-text">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="#">
-        <div className="input-box">
-          <input type="text" placeholder="Enter your name"/>
+      <form action="#" onSubmit={(e)=>sendmail(e)}>
+        <div className="input-box" >
+          <input type="text" placeholder="Enter your name" name="name"/>
         </div>
         <div className="input-box">
-          <input type="text" placeholder="Enter your email"/>
+          <input type="text" placeholder="Enter issue" name="issue"/>
         </div>
         <div className="input-box message-box">
-          
+        <input type="text" placeholder="Eloborate issue" name="message"/>
         </div>
-        <div className="button">
-          <input type="button" value="Send Now" />
+        {message && <div className='message'>{message}</div>}
+        <div className="resclick">
+          <input type="submit"  value='submit'/>
         </div>
       </form>
     </div>

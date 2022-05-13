@@ -19,8 +19,6 @@ login(username, password) {
         });
     }
     
-
-
   logout(){
     localStorage.removeItem("SavedToken");
   }

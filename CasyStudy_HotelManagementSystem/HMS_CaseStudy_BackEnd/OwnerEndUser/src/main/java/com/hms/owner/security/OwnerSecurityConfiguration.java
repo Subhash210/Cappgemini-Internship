@@ -30,7 +30,7 @@ public class OwnerSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf().disable().authorizeRequests()
-				.antMatchers("/swagger-resources/**", "/swagger-ui.html", "/v2/api-docs", "/swagger-ui/**",
+				.antMatchers("/swagger-resources/*", "/swagger-ui.html", "/v2/api-docs", "/swagger-ui/*",
 						"/webjars/**", "/owner/authenticate", "/owner/addowner")
 				.permitAll().anyRequest().authenticated().and().exceptionHandling().and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);

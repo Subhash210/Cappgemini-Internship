@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 .redirectlink {
     text-decoration: none;
     color: black;
@@ -22,8 +23,8 @@ h4{
 }
 p{
     font-size: smaller;
-
 }
+
 .mapping{
     margin-top: 40px;
     display: grid;
@@ -35,7 +36,17 @@ p{
 }
 .background{
     background-color: floralwhite;
-
+}
+.quotation{
+  text-align: center;
+  position: absolute;
+  color: rgb(108, 17, 17);
+  left: 100px;
+  right: 100px;
+  top: 200px;
+  font-weight: 550;
+  font-size: xx-large;
+  text-shadow: 1px 1px #e2d0bd;
 }
 .reservation{
     grid-column: 2/3;
@@ -45,12 +56,13 @@ p{
     grid-column: 2/3;
 }
 .parallax {
-    background-image: url("../images/recephome.jpg");
+    background-image: url("../images/image2.jpg");
     min-height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 0.75;
   }
 #logos{
     width: 50px;
@@ -59,12 +71,12 @@ p{
     left: 300px;
     background-color: #e2d0bd;
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
-    padding: 25px 20px;
+    padding: 15px 20px;
     position:sticky;
     top: 0%;
     z-index: 1;
     max-width: 900px;
-    bottom: 210px;
+    bottom: 220px;
    
 }
 .betweenbar ul{
@@ -105,7 +117,6 @@ p{
   font-size: x-large;
   font-weight: 600;
   margin-left: 50px;
-  margin-top: 53px;
 }
 
   /* Events */
@@ -144,8 +155,17 @@ p{
     margin-top: 53px;
   }
   /* services */
-section {
-    height: 100vh;
+
+ .services{
+  font-size: x-large;
+  font-weight: 600;
+  margin-left: 65px;
+  margin-top: 50px;
+  margin-bottom: 0%;
+ }
+
+  section {
+    height: 85vh;
     width: 100%;
     display: grid;
     place-items: center;
@@ -324,7 +344,7 @@ section {
     border: none;
     padding: 8px 16px;
     border-radius: 6px;
-    background: rgb(111, 55, 55)3;
+    background: rgb(111, 55, 55);
     cursor: pointer;
     transition: all 0.3s ease;
   }
@@ -365,3 +385,20 @@ section {
      margin-left: 0;
    }
   }
+  /* support button */
+  .sendnow{
+    background-color: rgb(111, 55, 55);
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+    padding: 15px 20px;
+  }
+  .sendbutton{
+    padding: 20px 40px;
+    letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+  }
+  

@@ -13,7 +13,7 @@ login(username, password) {
         .then(response => {
           const token = response.data;
           localStorage.setItem("SavedToken" , token) 
-          console.log(token);
+          
         });
     }
 

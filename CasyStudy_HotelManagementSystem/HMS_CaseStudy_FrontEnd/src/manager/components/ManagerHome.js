@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import {NavLink} from "react-router-dom";
 import ManagerHeader from "./ManagerHeader";
 import './ManagerHome.css'
+import emailjs from '@emailjs/browser';
 import staff from '../images/staff.png'
 import rooms1 from '../images/rooms2.png'
 import inventory from '../images/inventory.png'
@@ -14,12 +15,27 @@ import imageman4 from '../images/imageman4.jpeg'
 
    
 function ManagerHome() {
+
+  const[message,setMessage]=useState(null);
+  const sendmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_tqjy03g', 'template_ibrww7i', e.target, 'stWWakmH7XChiKhze')
+      .then((result) => {
+        setMessage("Your Message is recieved the support will contact you in 18 hours");
+        setTimeout(function(){window.location.reload()},1000);
+      }, (error) => {
+          console.log(error.text);
+      });e.target.reset();
+  };
+
   
 
   return (
     <div className="backgroundman">
      
       <div className="parallaxman"> <ManagerHeader/></div>
+      <div className="quotationown">Keep your egos in check, and let the people who work for you shine. Because they're the people who know our customers best, the people we depend on to lead the way. It's no longer Do as I say. It's Do as I do.</div>
       <div className="betweenbar">
         <ul>
           <li><a href="#eventheading">Events</a></li>
@@ -187,18 +203,19 @@ function ManagerHome() {
       <div className="right-side">
         <div className="topic-text">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="#">
-        <div className="input-box">
-          <input type="text" placeholder="Enter your name"/>
+      <form action="#" onSubmit={(e)=>sendmail(e)}>
+        <div className="input-box" >
+          <input type="text" placeholder="Enter your name" name="name"/>
         </div>
         <div className="input-box">
-          <input type="text" placeholder="Enter your email"/>
+          <input type="text" placeholder="Enter issue" name="issue"/>
         </div>
         <div className="input-box message-box">
-          
+        <input type="text" placeholder="Eloborate issue" name="message"/>
         </div>
-        <div className="button">
-          <input type="button" value="Send Now" />
+        {message && <div className='message'>{message}</div>}
+        <div className="resclick">
+          <input type="submit"  value='submit'/>
         </div>
       </form>
     </div>
