@@ -18,8 +18,8 @@ import com.twilio.type.PhoneNumber;
 @RequestMapping("/Notification")
 public class NotificationController {
 
-	private final static String ACCOUNT_SID = "AC422ae1c14a4cfa4dcf903decf5b37059";
-	private final static String AUTH_ID = "a0d7737a613f8a667add90068d4ce3dd";
+	private final static String ACCOUNT_SID = "AuthSID From Twilo";
+	private final static String AUTH_ID = "AuthId from twilo";
 
 	static {
 		Twilio.init(ACCOUNT_SID, AUTH_ID);
@@ -35,7 +35,7 @@ public class NotificationController {
 	// reservation completes
 	@PostMapping("/reservationnotification")
 	public void run(@RequestBody ReservationNotification details) throws Exception {
-		Message.creator(new PhoneNumber(details.getPhoneNumber()), new PhoneNumber("+17577928806"),
+		Message.creator(new PhoneNumber(details.getPhoneNumber()), new PhoneNumber("Virtual Phone Number from twilio"),
 				"Dear " + details.getName() + " Thank you for your reservation to BABAI Hotel . Your reservation code is "
 						+ details.getReservationCode())
 				.create();
@@ -46,7 +46,7 @@ public class NotificationController {
 	// guest sent to specific room
 	@PostMapping("/guestnotification")
 	public void guestRun(@RequestBody GuestNotification details) throws Exception {
-		Message.creator(new PhoneNumber(details.getPhoneNumber()), new PhoneNumber("+17577928806"),
+		Message.creator(new PhoneNumber(details.getPhoneNumber()), new PhoneNumber("Virtual Phone Number from twilio"),
 				"Dear " + details.getName() + " Your guest code is " + details.getGuestCode()).create();
 		guestMail.sendmail(details);
 	}
